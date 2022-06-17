@@ -1,0 +1,15 @@
+{
+  "name": "@tanqq/ts-template",
+  "version": "1.0.0",
+  "description": "js template for test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "cli",
+    "test"
+  ],
+  "author": "tanqq",
+  "license": "ISC"
+}
