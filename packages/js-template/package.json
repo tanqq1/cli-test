@@ -6,6 +6,11 @@
   "scripts": {
     "test": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanqq1/cli-test.git",
+    "directory": "packages/js-template"
+  },
   "keywords": [
     "cli",
     "test"
