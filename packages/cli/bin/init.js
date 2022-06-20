@@ -6,6 +6,8 @@ const currentNodeVersion = process.versions.node;
 const semver = currentNodeVersion.split(".");
 const major = semver[0];
 
+console.log("init....");
+
 if (major < 14) {
   console.error(
     "You are running Node " +

@@ -11,9 +11,7 @@ const os = require('os');
 
 const packageInfo = require("./package.json");
 
-console.log("version....", packageInfo.version);
-
-const templatePackageName = "package-example";
+const templatePackageName = "cli";
 
 function cloneTemplateRepo() {
   // 先判断是否已经存在这个文件夹？
@@ -37,7 +35,7 @@ async function fetchTemplateList() {
     `${chalk.green("Query Template List. This might take a while...")}`
   );
   await cloneTemplateRepo();
-  const templatePath = path.resolve(templatePackageName, "example");
+  const templatePath = path.resolve(templatePackageName, "template");
   if (nodeFs.existsSync(templatePath)) {
     return nodeFs.readdirSync(templatePath);
   }
@@ -85,7 +83,7 @@ async function createPackage(packageName) {
   const list = await fetchTemplateList();
   showInquirer(list).then((template) => {
     try {
-      const tempFilePath = path.resolve(templatePackageName, "example", template);
+      const tempFilePath = path.resolve(templatePackageName, "template", template);
       console.log("tempFilePath", tempFilePath);
       if (fs.existsSync(tempFilePath)) {
         fs.copySync(tempFilePath, root);
